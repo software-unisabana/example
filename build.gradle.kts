@@ -18,6 +18,8 @@ repositories {
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	compileOnly("org.projectlombok:lombok:1.18.24")
+	annotationProcessor("org.projectlombok:lombok:1.18.24")
 	runtimeOnly("com.h2database:h2")
 	runtimeOnly("com.mysql:mysql-connector-j")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
