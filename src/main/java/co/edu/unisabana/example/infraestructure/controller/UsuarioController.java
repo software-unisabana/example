@@ -15,7 +15,7 @@ public class UsuarioController {
 
   private UsuarioRepository repository;
 
-  @GetMapping(path = "/usuarios")
+  @GetMapping(path = "/usuarios/obtener")
   public List<UsuarioORM> obtenerUsuarios() {
     return repository.findAll();
   }
