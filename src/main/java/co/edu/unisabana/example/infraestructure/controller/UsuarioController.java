@@ -15,11 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class UsuarioController {
 
   private UsuarioRepository repository;
+  private final MemoryConsume memoryConsume;
 
   @GetMapping(path = "/usuarios/obtener")
   public List<UsuarioORM> obtenerUsuarios() throws InterruptedException {
     Thread.sleep(200);
-    return repository.findAll();
+    List<UsuarioORM> all = repository.findAll();
+    memoryConsume.consume(10);
+    return all;
   }
 
   @GetMapping(path = "/usuario/{id}")
