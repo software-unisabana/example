@@ -17,7 +17,8 @@ public class UsuarioController {
   private UsuarioRepository repository;
 
   @GetMapping(path = "/usuarios/obtener")
-  public List<UsuarioORM> obtenerUsuarios() {
+  public List<UsuarioORM> obtenerUsuarios() throws InterruptedException {
+    Thread.sleep(200);
     return repository.findAll();
   }
 
