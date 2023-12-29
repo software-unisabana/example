@@ -35,4 +35,9 @@ public class UsuarioController {
     repository.save(usuarioORM);
     return "guardado";
   }
+
+  @GetMapping(path = "/")
+  public String helloWord() {
+    return "Hola mundo";
+  }
 }
